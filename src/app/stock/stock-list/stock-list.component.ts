@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Stock } from 'src/app/core/model';
 
 const stock: Stock[] = [
-  { id: 1, namecourse: 'Development of Systems', period: 'Full' },
-  { id: 2, namecourse: 'Chemistry', period: 'Full' },
-  { id: 3, namecourse: 'Marketing', period: 'Morning' },
-  { id: 4, namecourse: 'Buildings', period: 'Night' },
+  { id: 1, },
+  { id: 2, },
+  { id: 3, },
+  { id: 4, },
 ];
 
 @Component({

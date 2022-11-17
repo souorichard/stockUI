@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Stock } from 'src/app/core/model';
-
-const stock: Stock[] = [
-  { id: 1, },
-  { id: 2, },
-  { id: 3, },
-  { id: 4, },
-];
+import { StockService } from '../services/stock.service';
 
 @Component({
   selector: 'app-stock-list',
@@ -15,10 +10,13 @@ const stock: Stock[] = [
 })
 export class StockListComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'name', 'period'];
-  stock = stock;
+  stock$: Observable<Stock[]>;
 
-  constructor() { }
+  displayedColumns: string[] = ['id'];
+
+  constructor( private stockService: StockService ) {
+    this.stock$ = this.stockService.list();
+  }
 
   ngOnInit(): void {
   }

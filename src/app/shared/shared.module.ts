@@ -1,20 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatTableModule } from '@angular/material/table';
-import { MatToolbarModule } from '@angular/material/toolbar';
+
+import { AppMaterialModule } from './app-material/app-material.module';
+import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ErrorDialogComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppMaterialModule,
   ],
   exports: [
-    MatToolbarModule,
-    MatButtonModule,
-    MatTableModule,
-    MatCardModule
+    AppMaterialModule,
+    ErrorDialogComponent
   ]
 })
 export class SharedModule { }

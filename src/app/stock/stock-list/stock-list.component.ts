@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Stock } from 'src/app/core/model';
+import { MatDialog } from '@angular/material/dialog';
+import { catchError, Observable, of } from 'rxjs';
+import { Product } from 'src/app/core/model';
+import { ErrorDialogComponent } from 'src/app/shared/error-dialog/error-dialog.component';
+
 import { StockService } from '../services/stock.service';
 
 @Component({
@@ -10,12 +13,20 @@ import { StockService } from '../services/stock.service';
 })
 export class StockListComponent implements OnInit {
 
-  stock$: Observable<Stock[]>;
+  stock$: Observable<Product[]>;
 
-  displayedColumns: string[] = ['id'];
+  displayedColumns: string[] = ['id', 'name', 'category', 'quantity'];
 
-  constructor( private stockService: StockService ) {
-    this.stock$ = this.stockService.list();
+  constructor(
+    private stockService: StockService,
+    public dialog: MatDialog
+  ) {
+    this.stock$ = this.stockService.list().pipe(
+      catchError(error => {
+        this.onError('Error loading products.');
+        return of([])
+      })
+    );
   }
 
   ngOnInit(): void {
@@ -26,6 +37,12 @@ export class StockListComponent implements OnInit {
       top: 500,
       behavior: 'smooth'
     })
+  }
+
+  onError(errorMsg: string) {
+    this.dialog.open(ErrorDialogComponent, {
+      data: errorMsg
+    });
   }
 
 }

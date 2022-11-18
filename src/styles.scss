@@ -19,3 +19,19 @@ section {
   padding: 100px;
   background-color: var(--primary);
 }
+
+
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--primary);        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #888;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid var(--primary);  /* creates padding around scroll thumb */
+}

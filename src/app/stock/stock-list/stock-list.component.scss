@@ -23,7 +23,7 @@
     p {
       font-size: rem-calc(16);
       font-weight: 300;
-      margin-top: 5px;
+      margin-top: 50px;
       color: var(--white);
     }
 
@@ -49,11 +49,50 @@
 
 #list {
   .card {
-    table {
-      .mat-column-period {
-        font-size: rem-calc(20);
-        padding-left: 16px;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--white);
+    box-shadow: 0 0 30px var(--shadowWhite);
+
+    .toolbar {
+      background: linear-gradient(to right, var(--blue), var(--blue2));
+
+      h2 {
+        font-size: rem-calc(24);
+        font-weight: 500;
+        margin-left: 10px;
+        color: var(--white);
+        letter-spacing: 2px;
       }
     }
+
+    table {
+      width: 100%;
+      background-color: var(--secondary);
+
+      .mat-column-id {
+        width: 32px;
+        padding-right: 24px;
+        text-align: center;
+        border-right: 1px solid currentColor;
+      }
+
+      .mat-column-name {
+        font-size: rem-calc(20);
+        padding-left: 30px;
+      }
+
+      .mat-column-category,
+      .mat-column-quantity {
+        font-size: rem-calc(20);
+      }
+    }
+  }
+
+  .loading-spinner {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

@@ -1,0 +1,16 @@
+h1 {
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+div {
+  .btn-close {
+    background: linear-gradient(to right, var(--blue), var(--blue2));
+    color: var(--white);
+    transition: .5s;
+  }
+
+  .btn-close:hover {
+    letter-spacing: 2px;
+  }
+}

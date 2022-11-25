@@ -25,24 +25,37 @@ mat-toolbar {
     }
   }
 
-  .navigation {
-    position: relative;
-    display: flex;
+  .nav-links {
+    flex: 1;
+    text-align: right;
 
-    li {
-      margin-left: 30px;
-      list-style: none;
-      cursor: pointer;
+    .navigation {
 
-      a {
-        font-weight: 300;
-        text-decoration: none;
-        color: var(--white);
+      li {
+        position: relative;
+        padding: 8px 15px;
+        display: inline-block;
+        list-style: none;
+
+        a {
+          font-weight: 500;
+          text-decoration: none;
+          color: var(--white);
+        }
       }
 
-      a:hover {
-        color: var(--blue);
-        text-shadow: 0 0 15px var(--blue);
+      li::after {
+        content: '';
+        width: 0%;
+        height: 3px;
+        margin: auto;
+        display: block;
+        background: var(--gradient);
+        transition: .5s;
+      }
+
+      li:hover::after {
+        width: 100%;
       }
     }
   }

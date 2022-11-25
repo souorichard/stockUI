@@ -1,8 +1,11 @@
 <mat-toolbar>
   <a routerLink="/" class="logo">Stock Etec <span>.</span></a>
-  <!-- <ul class="navigation">
-    <li><a routerLink="/">Home</a></li>
-  </ul> -->
+  <div class="nav-links">
+    <ul class="navigation">
+      <li><a (click)="scrollTop()" routerLink="/">Home</a></li>
+      <li><a (click)="scrollTop()" routerLink="/category">Category</a></li>
+    </ul>
+  </div>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

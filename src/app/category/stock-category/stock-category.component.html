@@ -1,8 +1,8 @@
 <section id="banner">
   <div class="content">
-    <h2>See Complete Stock</h2>
+    <h2>See Category Products</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea dicta quisquam dolorum doloribus aperiam pariatur sapiente, quam, debitis nesciunt error alias.</p>
-    <button mat-raised-button (click)="scroll()" class="btn">See Stock</button>
+    <button mat-raised-button (click)="scroll()" class="btn">See Category</button>
   </div>
 </section>
 
@@ -29,12 +29,6 @@
         <ng-container matColumnDef="category">
           <th mat-header-cell *matHeaderCellDef> Category </th>
           <td mat-cell *matCellDef="let stock"> {{ stock.category }} </td>
-        </ng-container>
-
-        <!-- Product Column -->
-        <ng-container matColumnDef="quantity">
-          <th mat-header-cell *matHeaderCellDef> Quantity </th>
-          <td mat-cell *matCellDef="let stock"> {{ stock.quantity }} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

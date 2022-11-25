@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { catchError, Observable, of } from 'rxjs';
+import { ProductCategory } from 'src/app/core/model';
 import { ErrorDialogComponent } from 'src/app/shared/error-dialog/error-dialog.component';
+
+import { CategoryService } from '../services/category.service';
 
 @Component({
   selector: 'app-stock-category',
@@ -8,9 +13,9 @@ import { ErrorDialogComponent } from 'src/app/shared/error-dialog/error-dialog.c
 })
 export class StockCategoryComponent implements OnInit {
 
-  stock$: Observable<Product[]>;
+  stock$: Observable<ProductCategory[]>;
 
-  displayedColumns: string[] = ['id', 'name', 'category', 'quantity'];
+  displayedColumns: string[] = ['id', 'name', 'category'];
 
   constructor(
     private categoryService: CategoryService,

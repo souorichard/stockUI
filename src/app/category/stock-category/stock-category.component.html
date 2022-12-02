@@ -21,20 +21,8 @@
 
         <!-- Product Column -->
         <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Name </th>
-          <td mat-cell *matCellDef="let stock"> {{ stock.product }} </td>
-        </ng-container>
-
-        <!-- Product Column -->
-        <ng-container matColumnDef="category">
           <th mat-header-cell *matHeaderCellDef> Category </th>
           <td mat-cell *matCellDef="let stock"> {{ stock.category }} </td>
-        </ng-container>
-
-        <!-- Product Column -->
-        <ng-container matColumnDef="quantity">
-          <th mat-header-cell *matHeaderCellDef> Quantity </th>
-          <td mat-cell *matCellDef="let stock"> {{ stock.quantity }} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

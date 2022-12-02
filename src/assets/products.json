@@ -1,5 +1,11 @@
 [
   {
-    "id": 1, "product": "Keyboard", "category": "Peripheral", "quantity": 3
+    "id": 1, "product": "Keyboard", "category": "1", "quantity": 3
+  },
+  {
+    "id": 2, "product": "Mouse", "category": "1", "quantity": 1
+  },
+  {
+    "id": 3, "product": "Lenovo PC", "category": "2", "quantity": 2
   }
 ]

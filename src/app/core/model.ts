@@ -4,3 +4,8 @@ export interface Product {
   category: string;
   quantity: number;
 }
+
+export interface Category {
+  id: number;
+  category: string;
+}
